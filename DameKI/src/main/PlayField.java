@@ -6,13 +6,19 @@ public class PlayField extends Field {
 	
 	private boolean ocupied= false;
 	private boolean color=false;
+	private boolean dame=false;
 	
-	public PlayField(int line, char column, boolean ocu, boolean color) {
+	public PlayField(int line, char column, boolean ocu, boolean color, boolean dame) {
 		super(line, column);
 		ocupieField(ocu);
 		setColor(color);
+		setDame(dame);
 	}
 	
+	private void setDame(boolean dame) {
+		this.dame=dame;
+	}
+
 	public void ocupieField(boolean ocupied) {
 		this.ocupied=ocupied;
 	}

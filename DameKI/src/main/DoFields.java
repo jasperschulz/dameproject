@@ -22,8 +22,10 @@ public class DoFields {
 	private void drawFields(){
 		Vector<PlayField> itr = this.fields;
 	    while(itr.iterator().hasNext()) {
+	    	PlayField field = itr.iterator().next();
+	    	int line = field.getLine();
 	    	
-	    	itr.iterator().next();
+	    	
 	    }
 	}
 	
