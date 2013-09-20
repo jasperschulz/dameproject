@@ -29,12 +29,24 @@ public class PlayField extends Field {
 		}
 	}
 	
+	public boolean getColor() {
+		return this.color;
+	}
+	
 	public void drawPlayField(){
 		
 	}
 	
 	public void createPlayField(){
 
+	}
+
+	public boolean getDame() {
+		return this.dame;
+	}
+
+	public boolean getOcupied() {
+		return this.ocupied;
 	}
 	
 }

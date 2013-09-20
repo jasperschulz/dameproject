@@ -32,10 +32,9 @@ public abstract class GJplay extends Player{
 		return field;
 	}
 	
-	public Vector<PlayField> fillFields(int line, char column, boolean ocupied, boolean color, boolean dame){
+	public void fillFields(int line, char column, boolean ocupied, boolean color, boolean dame){
 		PlayField field = fillField(line,column,ocupied,color,dame);
 		fields.add(field);
-		return fields;
 	}
 
 }
