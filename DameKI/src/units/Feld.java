@@ -1,7 +1,7 @@
 package units;
 
 
-public class field {
+public class Feld {
 	
 	int x;
 	int y;
@@ -10,7 +10,7 @@ public class field {
 	
 	Token token = null;
 	
-	public field (int x, int y){
+	public Feld (int x, int y){
 		
 		this.x = x;
 		this.y = y;

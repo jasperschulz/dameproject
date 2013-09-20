@@ -3,7 +3,7 @@ package units;
 import java.util.Vector;
 
 
-public class Player {
+public class Spieler {
 	
 	public static final String WHITE = "white";
 	public static final String BLACK = "black";
@@ -17,7 +17,7 @@ public class Player {
 	Vector<Token> tokens = new Vector<Token>();
 
 	
-	public Player (String color){
+	public Spieler (String color){
 		if (color == WHITE){
 			
 			tokenColor = WHITE;
@@ -37,7 +37,6 @@ public class Player {
 			this.addToken(3, 3);
 			this.addToken(5, 3);
 			this.addToken(7, 3);
-			
 			
 		} else {
 			

@@ -3,11 +3,11 @@ package units;
 import java.util.Iterator;
 import java.util.Vector;
 
-public class Playfield {
+public class Spielfeld {
 	
-	Vector<field> fields = new Vector<field>();
+	Vector<Feld> fields = new Vector<Feld>();
 	
-	public Playfield() {
+	public Spielfeld() {
 		
 		int x = 1;
 		int y = 8;
@@ -33,7 +33,7 @@ public class Playfield {
 	
 	public void addField(int x, int y) {
 		
-		field newField = new field(x , y);
+		Feld newField = new Feld(x , y);
 		fields.add(newField);
 		
 	}
@@ -41,9 +41,9 @@ public class Playfield {
 	public void generateDisplayFields() {
 	}
 	
-	public field getField(int x, int y) {
+	public Feld getField(int x, int y) {
 		
-		Iterator<field> itr = this.fields.iterator();
+		Iterator<Feld> itr = this.fields.iterator();
 		
 	    while(itr.hasNext()) {
 	    	if(itr.next().x == x && itr.next().y == y){
