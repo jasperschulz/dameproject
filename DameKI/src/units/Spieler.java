@@ -14,7 +14,7 @@ public class Spieler {
 	String tokenColor;
 	String playDirection;
 	
-	Vector<Token> tokens = new Vector<Token>();
+	public Vector<Token> tokens = new Vector<Token>();
 
 	
 	public Spieler (String color){

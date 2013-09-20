@@ -6,11 +6,16 @@ import java.util.Vector;
 public class Spielfeld {
 	
 	Vector<Feld> fields = new Vector<Feld>();
+	Spieler spieler1;
+	Spieler spieler2;
 	
-	public Spielfeld() {
+	public Spielfeld(Spieler spieler1, Spieler spieler2) {
 		
 		int x = 1;
 		int y = 8;
+		
+		this.spieler1 = spieler1;
+		this.spieler2 = spieler2;
 		
 		while(x != 9 && y != 0) {
 			
