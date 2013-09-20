@@ -6,7 +6,6 @@ import java.util.Vector;
 public class Playfield {
 	
 	Vector<field> fields = new Vector<field>();
-	Vector<field> displayFields = new Vector<field>();
 	
 	public Playfield() {
 		
@@ -57,6 +56,12 @@ public class Playfield {
 	}
 	
 	public void putTokensOnField (Vector<Token> tokens){
+		
+		Iterator<Token> itr = tokens.iterator();
+		
+	    while(itr.hasNext()) {
+	    	this.getField(itr.next().x, itr.next().y).token = itr.next();
+	    }
 		
 	}
 
