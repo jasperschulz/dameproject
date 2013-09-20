@@ -1,5 +1,6 @@
 package units;
 
+import java.util.Iterator;
 import java.util.Vector;
 
 public class Playfield {
@@ -9,26 +10,10 @@ public class Playfield {
 	
 	public Playfield() {
 		
-		addField(1,8);
-		
-		
-		
-		
-	}
-	
-	public void addField(int x, int y) {
-		
-		field newField = new field(x , y);
-		fields.add(newField);
-		
-	}
-	
-	public void generateDisplayFields() {
-		
 		int x = 1;
 		int y = 8;
 		
-		while(x != 8 && y != 1) {
+		while(x != 9 && y != 0) {
 			
 			addField(x,y);
 			
@@ -44,6 +29,35 @@ public class Playfield {
 			}
 			
 		}
+		
+	}
+	
+	public void addField(int x, int y) {
+		
+		field newField = new field(x , y);
+		fields.add(newField);
+		
+	}
+	
+	public void generateDisplayFields() {
+	}
+	
+	public field getField(int x, int y) {
+		
+		Iterator<field> itr = this.fields.iterator();
+		
+	    while(itr.hasNext()) {
+	    	if(itr.next().x == x && itr.next().y == y){
+	    		break;
+	    	}
+	    }
+	    
+	    return itr.next();
+		
+	}
+	
+	public void putTokensOnField (Vector<Token> tokens){
+		
 	}
 
 }
