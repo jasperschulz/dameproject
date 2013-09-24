@@ -26,5 +26,13 @@ public class Feld {
 		this.token = null;
 		this.occupied = false;
 	}
+	
+	public int getX () {
+		return this.x;
+	}
+	
+	public int getY () {
+		return this.y;
+	}
 
 }

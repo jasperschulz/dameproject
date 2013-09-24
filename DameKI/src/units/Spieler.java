@@ -23,49 +23,50 @@ public class Spieler {
 			tokenColor = WHITE;
 			playDirection = FORWARDS;
 			
-			this.addToken(1, 1);
-			this.addToken(3, 1);
-			this.addToken(5, 1);
-			this.addToken(7, 1);
+			this.addToken(1, 1, tokenColor);
+			this.addToken(3, 1, tokenColor);
+			this.addToken(5, 1, tokenColor);
+			this.addToken(7, 1, tokenColor);
 			
-			this.addToken(2, 2);
-			this.addToken(4, 2);
-			this.addToken(6, 2);
-			this.addToken(8, 2);
+			this.addToken(2, 2, tokenColor);
+			this.addToken(4, 2, tokenColor);
+			this.addToken(6, 2, tokenColor);
+			this.addToken(8, 2, tokenColor);
 			
-			this.addToken(1, 3);
-			this.addToken(3, 3);
-			this.addToken(5, 3);
-			this.addToken(7, 3);
+			this.addToken(1, 3, tokenColor);
+			this.addToken(3, 3, tokenColor);
+			this.addToken(5, 3, tokenColor);
+			this.addToken(7, 3, tokenColor);
 			
 		} else {
 			
 			tokenColor = BLACK;
 			playDirection = BACKWARDS;
 			
-			this.addToken(1, 8);
-			this.addToken(3, 8);
-			this.addToken(5, 8);
-			this.addToken(7, 8);
+			this.addToken(1, 8, tokenColor);
+			this.addToken(3, 8, tokenColor);
+			this.addToken(5, 8, tokenColor);
+			this.addToken(7, 8, tokenColor);
 			
-			this.addToken(2, 7);
-			this.addToken(4, 7);
-			this.addToken(6, 7);
-			this.addToken(8, 7);
+			this.addToken(2, 7, tokenColor);
+			this.addToken(4, 7, tokenColor);
+			this.addToken(6, 7, tokenColor);
+			this.addToken(8, 7, tokenColor);
 			
-			this.addToken(1, 6);
-			this.addToken(3, 6);
-			this.addToken(5, 6);
-			this.addToken(7, 6);
+			this.addToken(1, 6, tokenColor);
+			this.addToken(3, 6, tokenColor);
+			this.addToken(5, 6, tokenColor);
+			this.addToken(7, 6, tokenColor);
 			
 		}
 		
 	}
 	
 	
-	public void addToken(int x, int y) {
+	public void addToken(int x, int y, String color) {
 		
 		Token newToken = new Token(x, y);
+		newToken.color = color;
 		this.tokens.add(newToken);
 		
 	}
