@@ -1,16 +1,17 @@
 package main;
 
+import java.util.Iterator;
 import java.util.Vector;
 
 public class DoFields {
 	
 	public void drawFields(Vector<PlayField> fields){
-		Vector<PlayField> itr = fields;
+		Iterator<PlayField> itr = fields.iterator();
 		
 		System.out.println("   A B C D E F G H ");
 		
-	    while(itr.iterator().hasNext()) {
-	    	PlayField field = itr.iterator().next();
+	    while(itr.hasNext()) {
+	    	PlayField field = itr.next();
 	    	char column = field.getColumn();
 	    	int line = field.getLine();
 	    	
