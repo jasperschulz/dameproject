@@ -51,7 +51,8 @@ public class Spielfeld {
 		Iterator<Feld> itr = this.fields.iterator();
 		
 	    while(itr.hasNext()) {
-	    	if(itr.next().x == x && itr.next().y == y){
+	    	Feld feld = itr.next();
+	    	if(feld.x == x && feld.y == y){
 	    		break;
 	    	}
 	    }
@@ -61,13 +62,12 @@ public class Spielfeld {
 	}
 	
 	public void putTokensOnField (Vector<Token> tokens){
-		
+
 		Iterator<Token> itr = tokens.iterator();
-		
-	    while(itr.hasNext()) {
-	    	this.getField(itr.next().x, itr.next().y).token = itr.next();
-	    }
-		
+		while(itr.hasNext()) {
+			Token t = itr.next();
+			this.getField(t.x, t.y).token = t;
+		}
 	}
 	
 	public Vector <Feld> getFields() {

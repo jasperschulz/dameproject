@@ -1,7 +1,10 @@
 package match;
 
+import java.util.Vector;
+
 import main.DoFields;
 import main.GJplay;
+import units.Feld;
 import units.Spieler;
 import units.Spielfeld;
 
@@ -22,6 +25,9 @@ public class Game {
 		draw.drawFields(play.getPlayfield());
 		
 		System.out.println("Spiel wurde initialisiert.");
+		
+		Vector<Feld> felder = new Vector<Feld>();
+		felder.addAll(spielfeld.getFields());
 		
 	}
 
