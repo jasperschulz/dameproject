@@ -1,6 +1,7 @@
 package match;
 
 import main.DoFields;
+import main.DoTurn;
 import main.GJplay;
 import units.Spieler;
 import units.Spielfeld;
@@ -22,6 +23,9 @@ public class Game {
 		draw.drawFields(play.getPlayfield());
 		
 		System.out.println("Spiel wurde initialisiert.");
+		
+		DoTurn turn = new DoTurn();
+		turn.typeTurn();
 		
 	}
 
