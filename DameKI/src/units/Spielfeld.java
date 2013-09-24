@@ -39,7 +39,7 @@ public class Spielfeld {
 	public void addField(int x, int y) {
 		
 		Feld newField = new Feld(x , y);
-		fields.add(newField);
+		this.fields.add(newField);
 		
 	}
 	
