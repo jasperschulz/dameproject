@@ -87,5 +87,9 @@ public class GJplay extends Player{
 			colo=false;
 		return colo;
 	}
+	
+	public Vector<PlayField> getPlayfield(){
+		return this.fields;
+	}
 
 }
