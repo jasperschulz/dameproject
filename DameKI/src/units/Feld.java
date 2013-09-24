@@ -38,5 +38,10 @@ public class Feld {
 	public String getColor() {
 		return this.token.color;
 	}
+	
+	public boolean isOccupied () {
+		if(this.token != null) this.occupied = true;
+		return this.occupied;
+	}
 
 }
