@@ -16,11 +16,9 @@ public class GJplay extends Player{
 	private boolean color=false;
 	private Vector<PlayField> fields = new Vector<PlayField>();
 	private Vector<Feld> jspielfeld;
-	private Spielfeld jspielfeldobj;
 	
 	public GJplay(Spielfeld spielfeldobj){
-		this.jspielfeldobj=spielfeldobj;
-		this.jspielfeld=this.jspielfeldobj.getFields();
+		this.jspielfeld=spielfeldobj.getFields();
 		getData();
 	}
 
@@ -50,7 +48,7 @@ public class GJplay extends Player{
 		Iterator<Feld> itr = this.jspielfeld.iterator();
 	
 		while(itr.hasNext()) {
-			Feld aktu =(Feld)  itr.next();
+			Feld aktu = itr.next();
 			fillFields( aktu.getY() , transformColumn(aktu.getX()) , aktu.isOccupied() , transformColor(aktu.getColor()) , aktu.isDame());
 		}
 	}

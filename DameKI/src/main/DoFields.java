@@ -3,10 +3,21 @@ package main;
 import java.util.Iterator;
 import java.util.Vector;
 
-public class DoFields {
+import units.Feld;
+
+public class DoFields {	    		
 	
 	public void drawFields(Vector<PlayField> fields){
 		Iterator<PlayField> itr = fields.iterator();
+		
+		/*for (int i = 1;i <= 8; ++i) {
+			
+			while(itr.hasNext()) {
+				if(itr.next().getColumn() == x && itr.next().getLine() == i){
+					break;
+		    	}
+			}
+		}*/
 		
 		System.out.println("   A B C D E F G H ");
 		
