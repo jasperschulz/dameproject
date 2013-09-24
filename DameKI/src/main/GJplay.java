@@ -42,7 +42,7 @@ public class GJplay extends Player{
 	
 	public void fillFields(int line, char column, boolean ocupied, boolean color, boolean dame){
 		PlayField field = new PlayField(line,column,ocupied,color,dame);
-		fields.add(field);
+		this.fields.add(field);
 	}
 	
 	public void getData() {
