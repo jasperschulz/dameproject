@@ -14,7 +14,7 @@ import de.dame.Turn;
 public class GJplay extends Player{
 	
 	private boolean color=false;
-	private Vector<PlayField> fields;
+	private Vector<PlayField> fields = new Vector<PlayField>();
 	private Vector<Feld> jspielfeld;
 	private Spielfeld jspielfeldobj;
 	
