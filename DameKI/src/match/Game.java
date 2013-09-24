@@ -27,13 +27,9 @@ public class Game {
 		
 		System.out.println("Spiel wurde initialisiert.");
 		
-<<<<<<< HEAD
-		Vector<Feld> felder = new Vector<Feld>();
-		felder.addAll(spielfeld.getFields());
-=======
+
 		DoTurn turn = new DoTurn();
 		turn.typeTurn();
->>>>>>> branch 'master' of https://github.com/kidul/dameproject.git
 		
 	}
 
