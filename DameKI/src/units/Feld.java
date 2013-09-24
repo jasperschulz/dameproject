@@ -50,7 +50,12 @@ public class Feld {
 	}
 	
 	public boolean isDame () {
-		return this.token.dame;
+		if(this.isOccupied() == false) {
+			return false;
+		}
+		else {
+			return this.token.dame;
+		}
 	}
 
 }
