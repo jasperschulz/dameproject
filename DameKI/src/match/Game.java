@@ -1,5 +1,7 @@
 package match;
 
+import main.DoFields;
+import main.GJplay;
 import units.Spieler;
 import units.Spielfeld;
 
@@ -15,6 +17,10 @@ public class Game {
 		spielfeld.putTokensOnField(spieler1.tokens);
 		spielfeld.putTokensOnField(spieler2.tokens);
 		System.out.println("Spiel wurde initialisiert.");
+		
+		GJplay play = new GJplay(spielfeld);
+		DoFields draw = new DoFields();
+		draw.drawFields(play.getPlayfield());
 		
 	}
 
