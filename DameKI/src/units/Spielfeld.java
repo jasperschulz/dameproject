@@ -69,5 +69,9 @@ public class Spielfeld {
 	    }
 		
 	}
+	
+	public Vector <Feld> getFields() {
+		return this.fields;
+	}
 
 }
