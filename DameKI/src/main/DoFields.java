@@ -15,10 +15,9 @@ public class DoFields {
 	    	char column = field.getColumn();
 	    	int line = field.getLine();
 	    	
-	    	System.out.println("  -----------------");
-	    	
 	    	if (column == 'A')
 	    	{
+	    		System.out.println("  -----------------");
 	    		System.out.print(line + " ");
 	    	}
 	    	
@@ -47,11 +46,14 @@ public class DoFields {
 	    		}
 	    	}
 	    	
-	    	System.out.print ("|");
+	    	if (!field.getOcupied()) {
+	    		System.out.print (" ");
+	    	}
+	    	
 	    	//Abfrage für den Zeilenumbruch
 	    	if (column == 'H')
 	    	{
-	    		System.out.print("\n");
+	    		System.out.print ("|\n");
 	    	}
 	    }
 	    
