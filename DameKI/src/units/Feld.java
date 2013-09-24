@@ -6,7 +6,7 @@ public class Feld {
 	int x;
 	int y;
 	
-	boolean occupied;
+	boolean occupied = false;
 	
 	Token token = null;
 	
