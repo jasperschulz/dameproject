@@ -43,16 +43,13 @@ public class Spielfeld {
 		
 	}
 	
-	public void generateDisplayFields() {
-	}
-	
 	public Feld getField(int x, int y) {
 		
 		Iterator<Feld> itr = this.fields.iterator();
 		
 	    while(itr.hasNext()) {
 	    	Feld feld = itr.next();
-	    	if(feld.x == x && feld.y == y){
+	    	if(feld.getX() == x && feld.getY() == y){
 	    		break;
 	    	}
 	    }
@@ -64,10 +61,12 @@ public class Spielfeld {
 	public void putTokensOnField (Vector<Token> tokens){
 
 		Iterator<Token> itr = tokens.iterator();
+		
 		while(itr.hasNext()) {
-			Token t = itr.next();
-			this.getField(t.x, t.y).token = t;
+			Token currentToken = itr.next();
+			this.getField(currentToken.getX(), currentToken.getY()).setToken(currentToken);
 		}
+		
 	}
 	
 	public Vector <Feld> getFields() {

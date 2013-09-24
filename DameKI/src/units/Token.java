@@ -13,5 +13,21 @@ public class Token{
 		this.y = y;
 		
 	}
+	
+	public int getX () {
+		return this.x;
+	}
+	
+	public int getY () {
+		return this.x;
+	}
+	
+	public boolean isDame () {
+		return this.dame;
+	}
+	
+	public String getColor () {
+		return this.color;
+	}
 
 }
