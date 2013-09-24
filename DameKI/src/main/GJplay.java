@@ -21,6 +21,7 @@ public class GJplay extends Player{
 	public GJplay(Spielfeld spielfeldobj){
 		this.jspielfeldobj=spielfeldobj;
 		this.jspielfeld=this.jspielfeldobj.getFields();
+		getData();
 	}
 
 	@Override
