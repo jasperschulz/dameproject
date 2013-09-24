@@ -34,5 +34,9 @@ public class Feld {
 	public int getY () {
 		return this.y;
 	}
+	
+	public String getColor() {
+		return this.token.color;
+	}
 
 }
