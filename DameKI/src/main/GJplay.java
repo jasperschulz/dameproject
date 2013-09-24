@@ -11,7 +11,7 @@ import de.dame.InvalidTurnException;
 import de.dame.Player;
 import de.dame.Turn;
 
-public abstract class GJplay extends Player{
+public class GJplay extends Player{
 	
 	private boolean color=false;
 	private Vector<PlayField> fields;
