@@ -3,6 +3,7 @@ package match;
 import java.util.Vector;
 
 import main.DoFields;
+import main.DoTurn;
 import main.GJplay;
 import units.Feld;
 import units.Spieler;
@@ -26,8 +27,13 @@ public class Game {
 		
 		System.out.println("Spiel wurde initialisiert.");
 		
+<<<<<<< HEAD
 		Vector<Feld> felder = new Vector<Feld>();
 		felder.addAll(spielfeld.getFields());
+=======
+		DoTurn turn = new DoTurn();
+		turn.typeTurn();
+>>>>>>> branch 'master' of https://github.com/kidul/dameproject.git
 		
 	}
 
