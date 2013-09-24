@@ -40,13 +40,8 @@ public class GJplay extends Player{
 		}
 	}
 	
-	public PlayField fillField(int line, char column, boolean ocupied, boolean color, boolean dame){
-		PlayField field = new PlayField(line,column,ocupied,color,dame);
-		return field;
-	}
-	
 	public void fillFields(int line, char column, boolean ocupied, boolean color, boolean dame){
-		PlayField field = fillField(line,column,ocupied,color,dame);
+		PlayField field = new PlayField(line,column,ocupied,color,dame);
 		fields.add(field);
 	}
 	
