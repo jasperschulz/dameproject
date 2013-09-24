@@ -43,5 +43,9 @@ public class Feld {
 		if(this.token != null) this.occupied = true;
 		return this.occupied;
 	}
+	
+	public boolean isDame () {
+		return this.token.dame;
+	}
 
 }
