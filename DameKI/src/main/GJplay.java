@@ -55,7 +55,8 @@ public class GJplay extends Player{
 		Iterator<Feld> itr = this.jspielfeld.iterator();
 	
 		while(itr.hasNext()) {
-			fillFields( jspielfeld.iterator().next().getY() , transformColumn(jspielfeld.iterator().next().getX()) , jspielfeld.iterator().next().isOccupied() , transformColor(jspielfeld.iterator().next().getColor()) , jspielfeld.iterator().next().isDame());
+			Feld aktu =(Feld)  this.jspielfeld.iterator().next();
+			fillFields( aktu.getY() , transformColumn(aktu.getX()) , aktu.isOccupied() , transformColor(aktu.getColor()) , aktu.isDame());
 		}
 	}
 	
