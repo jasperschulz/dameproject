@@ -19,7 +19,7 @@ public class Spielfeld {
 		
 		while(x != 9 && y != 0) {
 			
-			addField(x,y);
+			this.addField(x,y);
 			
 			if(x == 8){
 				
