@@ -6,8 +6,10 @@ import java.util.Vector;
 public class Spielfeld {
 	
 	Vector<Feld> fields = new Vector<Feld>();
+	Vector<Token> tokens = new Vector<Token>();
 	Spieler spieler1;
 	Spieler spieler2;
+	
 	
 	public Spielfeld(Spieler spieler1, Spieler spieler2) {
 		
@@ -16,6 +18,9 @@ public class Spielfeld {
 		
 		this.spieler1 = spieler1;
 		this.spieler2 = spieler2;
+		
+		tokens.addAll(spieler1.getTokens());
+		tokens.addAll(spieler2.getTokens());
 		
 		while(x != 9 && y != 0) {
 			
@@ -34,6 +39,13 @@ public class Spielfeld {
 			
 		}
 		
+		Iterator<Token> itr = tokens.iterator();
+		
+		while(itr.hasNext()) {
+			Token currentToken = itr.next();
+			this.getField(currentToken.getX(), currentToken.getY()).setToken(currentToken);
+		}
+		
 	}
 	
 	public void addField(int x, int y) {
@@ -49,16 +61,14 @@ public class Spielfeld {
 		
 	    while(itr.hasNext()) {
 	    	Feld feld = itr.next();
-	    	if(feld.getX() == x && feld.getY() == y){
-	    		break;
-	    	}
+	    	if(feld.getX() == x && feld.getY() == y) break;
 	    }
 	    
 	    return itr.next();
 		
 	}
 	
-	public void putTokensOnField (Vector<Token> tokens){
+	public void updateTokensOnField (Vector<Token> tokens){
 
 		Iterator<Token> itr = tokens.iterator();
 		
@@ -69,8 +79,16 @@ public class Spielfeld {
 		
 	}
 	
+	public void synchronizeTokensAndFields() {
+		
+	}
+	
 	public Vector <Feld> getFields() {
 		return this.fields;
+	}
+	
+	public Vector<Token> getTokens() {
+		return this.tokens;
 	}
 
 }

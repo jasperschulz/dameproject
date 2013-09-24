@@ -1,11 +1,14 @@
 package units;
 
+import de.dame.Player;
+
 public class Token{
 	
 	int x;
 	int y;
 	boolean dame;
 	String color;
+	Player player;
 	
 	public Token (int x, int y){
 		
@@ -28,6 +31,15 @@ public class Token{
 	
 	public String getColor () {
 		return this.color;
+	}
+	
+	public void setPlayer (Player player) {
+		this.player = player;
+	}
+	
+	public void setPos (int x, int y) {
+		this.x = x;
+		this.y = y;
 	}
 
 }

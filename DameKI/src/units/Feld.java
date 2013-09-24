@@ -45,7 +45,6 @@ public class Feld {
 	}
 	
 	public boolean isOccupied () {
-		if(this.token != null) this.occupied = true;
 		return this.occupied;
 	}
 	

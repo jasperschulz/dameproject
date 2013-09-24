@@ -62,7 +62,6 @@ public class Spieler {
 		
 	}
 	
-	
 	public void addToken(int x, int y, String color) {
 		
 		Token newToken = new Token(x, y);

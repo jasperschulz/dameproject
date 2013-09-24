@@ -1,11 +1,8 @@
 package match;
 
-import java.util.Vector;
-
 import main.DoFields;
 import main.DoTurn;
 import main.GJplay;
-import units.Feld;
 import units.Spieler;
 import units.Spielfeld;
 
@@ -18,15 +15,11 @@ public class Game {
 		
 		Spielfeld spielfeld = new Spielfeld(spieler1,spieler2);
 		
-		spielfeld.putTokensOnField(spieler1.tokens);
-		spielfeld.putTokensOnField(spieler2.tokens);
-		
 		GJplay play = new GJplay(spielfeld);
 		DoFields draw = new DoFields();
 		draw.drawFields(play.getPlayfield());
 		
 		System.out.println("Spiel wurde initialisiert.");
-		
 
 		DoTurn turn = new DoTurn();
 		turn.typeTurn();
