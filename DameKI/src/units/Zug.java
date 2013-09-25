@@ -1,5 +1,7 @@
 package units;
 
+import java.util.Vector;
+
 import de.dame.Turn;
 
 public class Zug {
@@ -10,7 +12,7 @@ public class Zug {
 	int yLast;
 	int yNew;
 	
-	public Zug (Turn turn) {
+	public Zug (Vector<Sprung> turn) {
 		
 	}
 	

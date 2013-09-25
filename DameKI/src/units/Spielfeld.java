@@ -63,9 +63,7 @@ public class Spielfeld {
 		
 	    while(itr.hasNext()) {
 	    	feld = itr.next();
-	    	if(feld.getX() == x && feld.getY() == y) {
-	    		break;
-	    	}
+	    	if(feld.getX() == x && feld.getY() == y) break;
 	    }
 	    
 	    return feld;
