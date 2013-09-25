@@ -43,20 +43,20 @@ public class Spieler {
 			tokenColor = BLACK;
 			playDirection = BACKWARDS;
 			
-			this.addToken(1, 8, tokenColor);
-			this.addToken(3, 8, tokenColor);
-			this.addToken(5, 8, tokenColor);
-			this.addToken(7, 8, tokenColor);
+			this.addToken(2, 8, tokenColor);
+			this.addToken(4, 8, tokenColor);
+			this.addToken(6, 8, tokenColor);
+			this.addToken(8, 8, tokenColor);
 			
-			this.addToken(2, 7, tokenColor);
-			this.addToken(4, 7, tokenColor);
-			this.addToken(6, 7, tokenColor);
-			this.addToken(8, 7, tokenColor);
+			this.addToken(1, 7, tokenColor);
+			this.addToken(3, 7, tokenColor);
+			this.addToken(5, 7, tokenColor);
+			this.addToken(7, 7, tokenColor);
 			
-			this.addToken(1, 6, tokenColor);
-			this.addToken(3, 6, tokenColor);
-			this.addToken(5, 6, tokenColor);
-			this.addToken(7, 6, tokenColor);
+			this.addToken(2, 6, tokenColor);
+			this.addToken(4, 6, tokenColor);
+			this.addToken(6, 6, tokenColor);
+			this.addToken(8, 6, tokenColor);
 			
 		}
 		

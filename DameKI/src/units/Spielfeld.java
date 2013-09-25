@@ -59,12 +59,16 @@ public class Spielfeld {
 		
 		Iterator<Feld> itr = this.fields.iterator();
 		
+		Feld feld = null;
+		
 	    while(itr.hasNext()) {
-	    	Feld feld = itr.next();
-	    	if(feld.getX() == x && feld.getY() == y) break;
+	    	feld = itr.next();
+	    	if(feld.getX() == x && feld.getY() == y) {
+	    		break;
+	    	}
 	    }
 	    
-	    return itr.next();
+	    return feld;
 		
 	}
 	

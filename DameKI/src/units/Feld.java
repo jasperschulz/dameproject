@@ -6,12 +6,13 @@ public class Feld {
 	int x;
 	int y;
 	
-	boolean occupied = false;
+	boolean occupied;
 	
 	Token token = null;
 	
 	public Feld (int x, int y){
 		
+		this.occupied = false;
 		this.x = x;
 		this.y = y;
 		

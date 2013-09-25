@@ -22,7 +22,7 @@ public class Token{
 	}
 	
 	public int getY () {
-		return this.x;
+		return this.y;
 	}
 	
 	public boolean isDame () {
