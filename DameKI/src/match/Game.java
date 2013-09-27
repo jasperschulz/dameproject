@@ -21,7 +21,7 @@ public class Game {
 
 		System.out.println("Spiel wurde initialisiert.");
 
-		DoTurn turn = new DoTurn();
+		DoTurn turn = new DoTurn(play);
 		turn.typeTurn();
 
 	}

@@ -6,7 +6,10 @@ import java.util.Vector;
 
 import units.Feld;
 import units.Spielfeld;
+import units.Sprung;
 import units.Token;
+import units.Zug;
+import de.dame.Field;
 import de.dame.InvalidTurnException;
 import de.dame.Player;
 import de.dame.Turn;
@@ -16,6 +19,9 @@ public class GJplay extends Player{
 	private boolean color=false;
 	private Vector<PlayField> fields = new Vector<PlayField>();
 	private Vector<Feld> jspielfeld;
+	private Vector<Turn> workingTurn;
+	private Vector<Sprung> spruenge;
+	private Zug zug;
 	
 	public GJplay(Spielfeld spielfeldobj){
 		this.jspielfeld=spielfeldobj.getFields();
@@ -25,8 +31,8 @@ public class GJplay extends Player{
 	@Override
 	public Vector<Turn> getNextTurn(Vector<Turn> lastTurn)
 			throws InvalidTurnException {
-		// TODO Auto-generated method stub
-		return null;
+		workingTurn = lastTurn;
+		return workingTurn;
 	}
 	
 	public void setColor(String color){
@@ -85,6 +91,29 @@ public class GJplay extends Player{
 	
 	public Vector<PlayField> getPlayfield(){
 		return this.fields;
+	}
+	
+	public Vector<Sprung>getSpruenge(){
+		this.spruenge = new Vector<Sprung>();
+		Iterator<Turn> itr = this.workingTurn.iterator();
+		while (itr.hasNext()){
+			Turn aktuturn = itr.next();
+			fillSpruenge(aktuturn.getSource(), aktuturn.getDestination());
+		}
+		return this.spruenge;
+	}
+	
+	public void fillSpruenge(Field source, Field destination){
+		Sprung sprung = new Sprung( transformColumn(source.getColumn()) , source.getLine() , transformColumn(destination.getColumn()) , destination.getLine() );
+		this.spruenge.add(sprung);
+	}
+	
+	public void setZug() {
+		zug = new Zug(getSpruenge());
+	}
+	
+	public Zug getZug() {
+		return this.zug;
 	}
 
 }
