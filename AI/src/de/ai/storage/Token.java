@@ -18,10 +18,13 @@ public class Token {
 			for (int y = 1; y < 9; y++) {
 
 				if (Playfield.getInstance().field[x][y] == this) {
-
+					
 					foundX = x;
-
+					break;
+					
 				}
+				
+				if (foundX != 0) break;
 
 			}
 
@@ -38,11 +41,12 @@ public class Token {
 
 			for (int y = 1; y < 9; y++) {
 
-				if (Playfield.getInstance().field[x][y] == this) {
-
+				if (Playfield.getInstance().field[x][y] == this){
 					foundY = y;
-
+					break;
 				}
+				
+				if (foundY != 0) break;
 
 			}
 

@@ -12,7 +12,7 @@ public class Main extends Player{
 	@Override
 	public Vector<Turn> getNextTurn(Vector<Turn> lastTurn)
 			throws InvalidTurnException {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
