@@ -3,11 +3,10 @@ package de.ai.storage;
 public class Token {
 
 	private boolean dame;
-	
-	
+	private boolean team;
 
-	public Token() {
-
+	public Token(boolean team) {
+		this.team = team;
 	}
 
 	public int getXPos() {
@@ -59,6 +58,10 @@ public class Token {
 
 	public void setDame() {
 		this.dame = true;
+	}
+	
+	public boolean getTeam(){
+		return this.team;
 	}
 
 }
