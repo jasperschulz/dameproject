@@ -19,7 +19,7 @@ public class Game {
 		DoFields draw = new DoFields();
 		draw.drawFields(play.getPlayfield());
 
-		System.out.println("Spiel wurde initialisiert.");
+		System.out.println("Spiel wurde initialisiert!");
 
 		DoTurn turn = new DoTurn(play);
 		turn.typeTurn();
