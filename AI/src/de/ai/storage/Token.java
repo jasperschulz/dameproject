@@ -63,5 +63,10 @@ public class Token {
 	public boolean getTeam(){
 		return this.team;
 	}
+	
+	public void move(int x, int y){
+		Playfield.getInstance().field[this.getXPos()][this.getYPos()] = null;
+		Playfield.getInstance().field[x][y] = this;
+	}
 
 }

@@ -46,5 +46,11 @@ public class Playfield {
 		Token newToken = new Token(team);
 		this.field[x][y] = newToken;
 	}
+	
+	public boolean isOccupied(int x, int y) {
+		boolean occupied = true;
+		if(this.field[x][y] == null) occupied = false;
+		return occupied;
+	}
 
 }
