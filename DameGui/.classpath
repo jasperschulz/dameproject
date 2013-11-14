@@ -3,6 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/DameCore"/>
-	<classpathentry kind="lib" path="lib/swt.jar" sourcepath="/Users/svenclaussen/Downloads/swt-4.2-cocoa-macosx-x86_64/src.zip"/>
+	<classpathentry kind="lib" path="/usr/share/java/swt.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
