@@ -2,6 +2,7 @@ package de.ai;
 
 import java.util.Vector;
 
+import de.ai.exchange.Receive;
 import de.dame.InvalidTurnException;
 import de.dame.Player;
 import de.dame.Turn;
@@ -10,9 +11,15 @@ import de.dame.Turn;
 public class Main extends Player{
 
 	@Override
-	public Vector<Turn> getNextTurn(Vector<Turn> lastTurn)
-			throws InvalidTurnException {
-		
+	public Vector<Turn> getNextTurn(Vector<Turn> lastTurn){
+		try{
+			
+			Receive.checkLastTurn(lastTurn);
+			
+		}
+		catch (InvalidTurnException e) {
+			
+		}		
 		return null;
 	}
 
