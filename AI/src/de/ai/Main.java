@@ -21,5 +21,12 @@ public class Main extends Player{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void setColorInternal() {
+		
+		super.getColor();
+		
+	}
 	
 }
