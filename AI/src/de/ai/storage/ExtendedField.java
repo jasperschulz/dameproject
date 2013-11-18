@@ -1,6 +1,7 @@
 package de.ai.storage;
 
 import de.dame.Field;
+import de.dame.InvalidTurnException;
 
 public class ExtendedField extends Field{
 	
@@ -12,7 +13,7 @@ public class ExtendedField extends Field{
 	
 	private Field superclass = null;
 	
-	public ExtendedField (int linie, char spalte) {
+	public ExtendedField (int linie, char spalte) throws InvalidTurnException{
 		
 		super(linie, spalte);
 		
@@ -22,6 +23,10 @@ public class ExtendedField extends Field{
 		this.column = superclass.getColumnLowerCase();
 		
 		this.y = line;
+		
+		if(this.y > 0 && this.y < 9) {
+			
+		} else throw new InvalidTurnException("FieldError: Invalid line");
 		
 		switch (column){
 		case 'a':
@@ -49,7 +54,7 @@ public class ExtendedField extends Field{
 			this.x = 8;
 			break;
 		default:
-			break;
+			throw new InvalidTurnException("FieldError: Invalid column");
 		}
 	
 	}
