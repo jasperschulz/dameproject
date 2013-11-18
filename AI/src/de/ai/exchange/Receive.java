@@ -11,10 +11,7 @@ public abstract class Receive {
 	public static void checkLastTurn(Vector<Turn> lastTurn) {
 		
 		Iterator<Turn> itr = lastTurn.iterator();
-		
 		Turn currentTurn = new Turn();
-		
-		
 		int anzahlDerTurns = lastTurn.size();
 		
 		if(anzahlDerTurns == 1){

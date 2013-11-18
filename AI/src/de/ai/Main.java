@@ -15,7 +15,7 @@ public class Main extends Player{
 		try{
 			
 			Receive.checkLastTurn(lastTurn);
-			
+			throw new InvalidTurnException("exception wird hier nur temporaer geworfen!");
 		}
 		catch (InvalidTurnException e) {
 			

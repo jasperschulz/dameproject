@@ -29,32 +29,32 @@ public class ExtendedField extends Field{
 		} else throw new InvalidTurnException("FieldError: Invalid line");
 		
 		switch (column){
-		case 'a':
-			this.x = 1;
-			break;
-		case 'b':
-			this.x = 2;
-			break;
-		case 'c':
-			this.x = 3;
-			break;
-		case 'd':
-			this.x = 4;
-			break;
-		case 'e':
-			this.x = 5;
-			break;
-		case 'f':
-			this.x = 6;
-			break;
-		case 'g':
-			this.x = 7;
-			break;
-		case 'h':
-			this.x = 8;
-			break;
-		default:
-			throw new InvalidTurnException("FieldError: Invalid column");
+			case 'a':
+				this.x = 1;
+				break;
+			case 'b':
+				this.x = 2;
+				break;
+			case 'c':
+				this.x = 3;
+				break;
+			case 'd':
+				this.x = 4;
+				break;
+			case 'e':
+				this.x = 5;
+				break;
+			case 'f':
+				this.x = 6;
+				break;
+			case 'g':
+				this.x = 7;
+				break;
+			case 'h':
+				this.x = 8;
+				break;
+			default:
+				throw new InvalidTurnException("FieldError: Invalid column");
 		}
 	
 	}
