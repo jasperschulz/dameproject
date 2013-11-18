@@ -52,5 +52,11 @@ public class Playfield {
 		if(this.field[x][y] == null) occupied = false;
 		return occupied;
 	}
+	
+	public Token getToken (int x, int y) {
+		//TODO: Fehlerprüfung
+		Token token = field[x][y];
+		return token;
+	}
 
 }

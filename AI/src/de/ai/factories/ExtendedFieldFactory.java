@@ -6,7 +6,7 @@ import de.dame.InvalidTurnException;
 
 public abstract class ExtendedFieldFactory {
 	
-	public ExtendedField TransformFieldToExtendedField(Field field) throws InvalidTurnException{
+	public static ExtendedField TransformFieldToExtendedField(Field field) throws InvalidTurnException{
 		ExtendedField extendedfield = new ExtendedField(field.getLine(),field.getColumnLowerCase());
 		return extendedfield;
 	}
