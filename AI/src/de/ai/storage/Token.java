@@ -5,7 +5,7 @@ import de.dame.InvalidTurnException;
 public class Token {
 
 	private boolean dame;
-	private boolean team;
+	private final boolean team;
 
 	public Token(boolean team) {
 		this.team = team;
@@ -72,7 +72,7 @@ public class Token {
 	
 	public void move(int x, int y) throws InvalidTurnException{
 		Playfield.getInstance().field[this.getXPos()][this.getYPos()] = null;
-		if(Playfield.getInstance().field[x][y] == null){
+		if(!Playfield.getInstance().isOccupied(x,y)){
 			Playfield.getInstance().field[x][y] = this;
 		} else {
 			throw new InvalidTurnException("MoveError: destination is occupied");
