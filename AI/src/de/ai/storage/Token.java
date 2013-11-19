@@ -1,5 +1,7 @@
 package de.ai.storage;
 
+import de.dame.InvalidTurnException;
+
 public class Token {
 
 	private boolean dame;
@@ -68,9 +70,13 @@ public class Token {
 		return this.team;
 	}
 	
-	public void move(int x, int y){
+	public void move(int x, int y) throws InvalidTurnException{
 		Playfield.getInstance().field[this.getXPos()][this.getYPos()] = null;
-		Playfield.getInstance().field[x][y] = this;
+		if(Playfield.getInstance().field[x][y] == null){
+			Playfield.getInstance().field[x][y] = this;
+		} else {
+			throw new InvalidTurnException("MoveError: destination is occupied");
+		}
 	}
 
 }

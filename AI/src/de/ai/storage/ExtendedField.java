@@ -24,9 +24,7 @@ public class ExtendedField extends Field{
 		
 		this.y = line;
 		
-		if(this.y > 0 && this.y < 9) {
-			
-		} else throw new InvalidTurnException("FieldError: Invalid line");
+		if(!(this.y > 0 && this.y < 9)) throw new InvalidTurnException("FieldError: Invalid line");
 		
 		switch (column){
 			case 'a':
