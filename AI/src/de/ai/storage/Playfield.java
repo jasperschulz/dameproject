@@ -1,5 +1,7 @@
 package de.ai.storage;
 
+import de.dame.InvalidTurnException;
+
 public class Playfield {
 	
 	private static Playfield instance = null;
@@ -53,8 +55,8 @@ public class Playfield {
 		return occupied;
 	}
 	
-	public Token getToken (int x, int y) {
-		//TODO: Fehlerprüfung
+	public Token getToken (int x, int y) throws InvalidTurnException{
+		if (!isOccupied(x,y)) throw new InvalidTurnException("getToken: No Token found on field");
 		Token token = field[x][y];
 		return token;
 	}

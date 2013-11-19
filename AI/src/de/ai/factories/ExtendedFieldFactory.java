@@ -10,5 +10,41 @@ public abstract class ExtendedFieldFactory {
 		ExtendedField extendedfield = new ExtendedField(field.getLine(),field.getColumnLowerCase());
 		return extendedfield;
 	}
+	
+	public static ExtendedField ExtendedFieldCreate(int x, int y) throws InvalidTurnException{
+		
+		char spalte = 'a';
+		
+		switch (x){
+			case 1:
+				spalte = 'a';
+				break;
+			case 2:
+				spalte = 'b';
+				break;
+			case 3:
+				spalte = 'c';
+				break;
+			case 4:
+				spalte = 'd';
+				break;
+			case 5:
+				spalte = 'e';
+				break;
+			case 6:
+				spalte = 'f';
+				break;
+			case 7:
+				spalte = 'g';
+				break;
+			case 8:
+				spalte = 'h';
+				break;
+		}
+		
+		ExtendedField extendedField = new ExtendedField( y, spalte);
+				
+		return extendedField;
+	}
 
 }

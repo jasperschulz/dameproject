@@ -1,5 +1,7 @@
 package de.ai.storage;
 
+import java.util.Vector;
+
 import de.dame.InvalidTurnException;
 
 public class Token {
@@ -77,6 +79,24 @@ public class Token {
 		} else {
 			throw new InvalidTurnException("MoveError: destination is occupied");
 		}
+	}
+	
+	public Vector<ExtendedField> getPossibleMoves() {
+		
+		
+		
+		return null;
+	}
+	
+	private Vector<ExtendedField> getFieldsAround() {
+		
+		Vector<ExtendedField> fieldsAround = new Vector<ExtendedField>();
+		
+		int currentX = this.getXPos();
+		int currentY = this.getYPos();
+		
+		
+		return null;
 	}
 
 }

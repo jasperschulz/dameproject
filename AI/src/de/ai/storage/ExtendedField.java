@@ -56,7 +56,7 @@ public class ExtendedField extends Field{
 		}
 	
 	}
-	
+		
 	public Field getSuperClass() {
 		return superclass;
 	}
