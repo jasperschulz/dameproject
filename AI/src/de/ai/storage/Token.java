@@ -1,7 +1,9 @@
 package de.ai.storage;
 
+import java.util.Iterator;
 import java.util.Vector;
 
+import de.ai.factories.ExtendedFieldFactory;
 import de.dame.InvalidTurnException;
 
 public class Token {
@@ -81,22 +83,65 @@ public class Token {
 		}
 	}
 	
-	public Vector<ExtendedField> getPossibleMoves() {
+	public Vector<ExtendedField> getPossibleMoves() throws InvalidTurnException {
 		
+		Vector<ExtendedField> fieldsAround = this.getFieldsAround();
+		Vector<ExtendedField> possibleFields = new Vector<ExtendedField>();
 		
+		Iterator<ExtendedField> itr = fieldsAround.iterator();
 		
-		return null;
+		ExtendedField currentField = ExtendedFieldFactory.ExtendedFieldCreate(this.getXPos(), this.getYPos());
+		ExtendedField checkingField;
+		
+		while (itr.hasNext()) {
+			
+			checkingField = itr.next();
+			
+			if(this.team == false && this.dame == false && checkingField.getYPos() < currentField.getYPos()) possibleFields.add(checkingField);
+			
+		}
+		
+		return possibleFields;
 	}
 	
-	private Vector<ExtendedField> getFieldsAround() {
+	private Vector<ExtendedField> getFieldsAround() throws InvalidTurnException {
 		
 		Vector<ExtendedField> fieldsAround = new Vector<ExtendedField>();
 		
 		int currentX = this.getXPos();
 		int currentY = this.getYPos();
 		
+		int calculatedX;
+		int calculatedY;
+
+		calculatedY = currentY+1;
+		calculatedX = currentX-1;
+		if((calculatedY > 0 && calculatedY < 9) && (calculatedX > 0 && calculatedX < 9)) fieldsAround.add(ExtendedFieldFactory.ExtendedFieldCreate(calculatedX, calculatedY));
+
+		calculatedY = currentY+1;
+		calculatedX = currentX+1;
+		if((calculatedY > 0 && calculatedY < 9) && (calculatedX > 0 && calculatedX < 9)) fieldsAround.add(ExtendedFieldFactory.ExtendedFieldCreate(calculatedX, calculatedY));
+
+		calculatedY = currentY-1;
+		calculatedX = currentX+1;
+		if((calculatedY > 0 && calculatedY < 9) && (calculatedX > 0 && calculatedX < 9)) fieldsAround.add(ExtendedFieldFactory.ExtendedFieldCreate(calculatedX, calculatedY));
+
+		calculatedY = currentY-1;
+		calculatedX = currentX-1;
+		if((calculatedY > 0 && calculatedY < 9) && (calculatedX > 0 && calculatedX < 9)) fieldsAround.add(ExtendedFieldFactory.ExtendedFieldCreate(calculatedX, calculatedY));
 		
-		return null;
+		
+		return fieldsAround;
+	}
+	
+	public boolean isOccupiedByMate(int x, int y) {
+		boolean occupied = false;
+		if(Playfield.getInstance().field[x][y] != null){
+			if(Playfield.getInstance().field[x][y].getTeam() == this.team) {
+				occupied = true;
+			}
+		}
+		return occupied;
 	}
 
 }
