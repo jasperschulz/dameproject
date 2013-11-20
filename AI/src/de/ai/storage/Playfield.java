@@ -1,5 +1,6 @@
 package de.ai.storage;
 
+import de.ai.factories.ExtendedFieldFactory;
 import de.dame.InvalidTurnException;
 
 public class Playfield {
@@ -59,6 +60,40 @@ public class Playfield {
 		if (!isOccupied(x,y)) throw new InvalidTurnException("getToken: No Token found on field");
 		Token token = field[x][y];
 		return token;
+	}
+	
+	
+	/**
+	 Methode gibt anhand des Source- und EnemyFields das SpringField, sofern es innerhalb des Feldes ist (sonst return-> null)
+	*/
+	public ExtendedField getJumpField(ExtendedField sourceField, ExtendedField enemyField) throws InvalidTurnException{
+		
+		int sourceX = sourceField.getXPos();
+		int sourceY = sourceField.getYPos();
+		
+		int enemyX = enemyField.getXPos();
+		int enemyY = enemyField.getYPos();
+		
+		int jumpX;
+		int jumpY;
+		
+		if(sourceX - enemyX < 0) {
+				jumpX = enemyX + 1;
+		} else {
+			jumpX = enemyX - 1;
+		}
+		
+		if(sourceY - enemyY < 0) {
+			jumpY = enemyY + 1;
+		} else {
+			jumpY = enemyY - 1;
+		}
+		
+		if(jumpX > 0 && jumpX < 9 && jumpY > 0 && jumpY < 9) {
+			return ExtendedFieldFactory.ExtendedFieldCreate(jumpX, jumpY);
+		} else {
+			return null;
+		}
 	}
 
 }

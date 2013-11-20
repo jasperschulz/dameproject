@@ -97,7 +97,65 @@ public class Token {
 			
 			checkingField = itr.next();
 			
-			if(this.team == false && this.dame == false && checkingField.getYPos() < currentField.getYPos()) possibleFields.add(checkingField);
+			if(this.team == false && this.dame == false && checkingField.getYPos() < currentField.getYPos() && this.isOccupiedByMate(checkingField.getXPos(),checkingField.getYPos()) == false){
+				if(Playfield.getInstance().isOccupied(checkingField.getXPos(),checkingField.getYPos())){
+					
+					if (Playfield.getInstance().getJumpField(currentField, checkingField) != null) {
+						
+						ExtendedField jumpField = Playfield.getInstance().getJumpField(currentField, checkingField);
+						
+						if (!Playfield.getInstance().isOccupied(jumpField.getXPos(), jumpField.getYPos())){
+							possibleFields.clear();
+							possibleFields.add(jumpField);
+							break;
+						}
+						
+					}
+
+				} else {
+					possibleFields.add(checkingField);
+				}
+			}
+			
+			if(this.dame == true && this.isOccupiedByMate(checkingField.getXPos(),checkingField.getYPos()) == false){
+				if(Playfield.getInstance().isOccupied(checkingField.getXPos(),checkingField.getYPos())){
+					
+					if (Playfield.getInstance().getJumpField(currentField, checkingField) != null) {
+						
+						ExtendedField jumpField = Playfield.getInstance().getJumpField(currentField, checkingField);
+						
+						if (!Playfield.getInstance().isOccupied(jumpField.getXPos(), jumpField.getYPos())){
+							possibleFields.clear();
+							possibleFields.add(jumpField);
+							break;
+						}
+						
+					}
+
+				} else {
+					possibleFields.add(checkingField);
+				}
+			}
+			
+			if(this.team == true && this.dame == false && checkingField.getYPos() > currentField.getYPos() && this.isOccupiedByMate(checkingField.getXPos(),checkingField.getYPos()) == false){
+				if(Playfield.getInstance().isOccupied(checkingField.getXPos(),checkingField.getYPos())){
+					
+					if (Playfield.getInstance().getJumpField(currentField, checkingField) != null) {
+						
+						ExtendedField jumpField = Playfield.getInstance().getJumpField(currentField, checkingField);
+						
+						if (!Playfield.getInstance().isOccupied(jumpField.getXPos(), jumpField.getYPos())){
+							possibleFields.clear();
+							possibleFields.add(jumpField);
+							break;
+						}
+						
+					}
+
+				} else {
+					possibleFields.add(checkingField);
+				}
+			}
 			
 		}
 		

@@ -21,9 +21,5 @@ public class Possibilities {
 		
 		return null;
 	}
-	
-	public static Field getPossibleMoves(Token token){
-		return null;
-	}
 
 }
