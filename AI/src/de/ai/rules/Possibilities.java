@@ -27,7 +27,9 @@ public class Possibilities {
 		Vector<Turn> singleTurn3 = new Vector<Turn>();
 		Vector<Turn> singleTurn4 = new Vector<Turn>();
 		
-		if(possibleMoves.size() == 1){
+		if(possibleMoves.size() == 1 && Math.abs(possibleMoves.firstElement().getXPos() - source.getXPos()) > 1){
+			
+			//TODO: WENN DER TOKEN EINEN ANDEREN SCHLAGEN MUSS -> WIRD HIER ETWAS PASSIEREN!
 			
 		} else {
 			
