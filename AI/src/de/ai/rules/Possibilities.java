@@ -32,7 +32,7 @@ public class Possibilities {
 			Turn turn = new Turn();
 			turn.setSource(source.getSuperClass());
 			turn.setDestination(possibleMoves.firstElement().getSuperClass());		
-			turn.setRemovedStone(ExtendedFieldFactory.getRemovedStone(source, possibleMoves.firstElement()));
+			turn.setRemovedStone(ExtendedFieldFactory.getRemovedStone(source, possibleMoves.firstElement()).getSuperClass());
 			
 			singleTurn1.add(turn);
 			
@@ -49,7 +49,7 @@ public class Possibilities {
 
 				turn.setSource(source.getSuperClass());
 				turn.setDestination(possibleMoves.firstElement().getSuperClass());		
-				turn.setRemovedStone(ExtendedFieldFactory.getRemovedStone(source, possibleMoves.firstElement()));
+				turn.setRemovedStone(ExtendedFieldFactory.getRemovedStone(source, possibleMoves.firstElement()).getSuperClass());
 				
 				singleTurn1.add(turn);
 				
@@ -63,7 +63,7 @@ public class Possibilities {
 					
 					turn.setSource(source.getSuperClass());
 					turn.setDestination(possibleMoves.firstElement().getSuperClass());		
-					turn.setRemovedStone(ExtendedFieldFactory.getRemovedStone(source, possibleMoves.firstElement()));
+					turn.setRemovedStone(ExtendedFieldFactory.getRemovedStone(source, possibleMoves.firstElement()).getSuperClass());
 					
 					singleTurn1.add(turn);
 					
