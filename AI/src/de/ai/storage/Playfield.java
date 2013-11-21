@@ -5,6 +5,7 @@ import de.dame.InvalidTurnException;
 
 public class Playfield {
 	
+	private static boolean myTeam;
 	private static Playfield instance = null;
 	
 	Token[][] field = new Token [9][9];
@@ -94,6 +95,14 @@ public class Playfield {
 		} else {
 			return null;
 		}
+	}
+	
+	public boolean getMyTeam() {
+		return myTeam;
+	}
+	
+	public void setMyTeam(boolean team){
+		myTeam = team;
 	}
 
 }
