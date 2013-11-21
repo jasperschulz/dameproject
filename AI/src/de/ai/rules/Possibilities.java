@@ -28,7 +28,56 @@ public class Possibilities {
 		Vector<Turn> singleTurn4 = new Vector<Turn>();
 		
 		if(possibleMoves.size() == 1 && Math.abs(possibleMoves.firstElement().getXPos() - source.getXPos()) > 1){
-						
+			
+			Turn turn = new Turn();
+			turn.setSource(source.getSuperClass());
+			turn.setDestination(possibleMoves.firstElement().getSuperClass());		
+			turn.setRemovedStone(ExtendedFieldFactory.getRemovedStone(source, possibleMoves.firstElement()));
+			
+			singleTurn1.add(turn);
+			
+			int setBackPosX = token.getXPos();
+			int setBackPosY = token.getYPos();
+			
+			token.move(possibleMoves.firstElement().getXPos(),possibleMoves.firstElement().getYPos());
+			source = possibleMoves.firstElement();
+			
+			possibleMoves.clear();
+			possibleMoves.addAll(token.getPossibleMoves());
+			
+			if(possibleMoves.size() == 1 && Math.abs(possibleMoves.firstElement().getXPos() - source.getXPos()) > 1){
+
+				turn.setSource(source.getSuperClass());
+				turn.setDestination(possibleMoves.firstElement().getSuperClass());		
+				turn.setRemovedStone(ExtendedFieldFactory.getRemovedStone(source, possibleMoves.firstElement()));
+				
+				singleTurn1.add(turn);
+				
+				token.move(possibleMoves.firstElement().getXPos(),possibleMoves.firstElement().getYPos());
+				source = possibleMoves.firstElement();
+				
+				possibleMoves.clear();
+				possibleMoves.addAll(token.getPossibleMoves());
+				
+				if(possibleMoves.size() == 1 && Math.abs(possibleMoves.firstElement().getXPos() - source.getXPos()) > 1){
+					
+					turn.setSource(source.getSuperClass());
+					turn.setDestination(possibleMoves.firstElement().getSuperClass());		
+					turn.setRemovedStone(ExtendedFieldFactory.getRemovedStone(source, possibleMoves.firstElement()));
+					
+					singleTurn1.add(turn);
+					
+					token.move(possibleMoves.firstElement().getXPos(),possibleMoves.firstElement().getYPos());
+					
+					possibleMoves.clear();
+					possibleMoves.addAll(token.getPossibleMoves());
+					
+				}
+				
+			}
+			
+			token.move(setBackPosX,setBackPosY);
+			
 		} else {
 			
 			Iterator<ExtendedField> itr = possibleMoves.iterator();

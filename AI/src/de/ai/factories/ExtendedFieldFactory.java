@@ -46,5 +46,15 @@ public abstract class ExtendedFieldFactory {
 				
 		return extendedField;
 	}
+	
+	public static ExtendedField getRemovedStone(ExtendedField source, ExtendedField destination) throws InvalidTurnException {
+		
+		int xPos = source.getXPos()+(destination.getXPos()-source.getXPos());
+		int yPos = source.getYPos()+(destination.getYPos()-source.getYPos());
+		
+		ExtendedField extendedField = ExtendedFieldCreate(xPos, yPos);
+		
+		return extendedField;
+	}
 
 }
