@@ -188,7 +188,6 @@ public class Token {
 		calculatedX = currentX-1;
 		if((calculatedY > 0 && calculatedY < 9) && (calculatedX > 0 && calculatedX < 9)) fieldsAround.add(ExtendedFieldFactory.ExtendedFieldCreate(calculatedX, calculatedY));
 		
-		
 		return fieldsAround;
 	}
 	
