@@ -80,7 +80,6 @@ public class Possibilities {
 				turnVectors.add(singleTurn3);
 				turnVectors.add(singleTurn4);
 				break;
-		
 		}
 		
 		return turnVectors;
