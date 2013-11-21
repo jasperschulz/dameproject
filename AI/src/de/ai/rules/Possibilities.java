@@ -13,6 +13,12 @@ import de.dame.Turn;
 
 public class Possibilities {
 	
+	
+	
+	/**
+	 Die Methode gibt einen Vector mit den möglichen Turn-Vectoren aus Sicht eines Tokens/Feldes zurück. Es wird nicht
+	 berücksichtigt, ob andere Tokens auf dem Spielfeld einen gegnerischen Token schlagen müssen (das muss vorher geprüft werden). 
+	*/
 	public static Vector<Vector<Turn>> getPossibleTurns(Field field) throws InvalidTurnException{
 		
 		int singleTurnAnzahl = 1;
