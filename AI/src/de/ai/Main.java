@@ -22,6 +22,8 @@ public class Main extends Player{
 		}
 		catch (InvalidTurnException e) {
 			
+			e.printStackTrace();
+			
 		}		
 		return null;
 	}
